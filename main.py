@@ -114,7 +114,7 @@ class Node(object):
     if n.is_input:
       self.c0 = 1
       self.c1 = 1
-    for i in self.interms:  # skip calculating unless all interms have specific values 1 or 0
+    for i in self.interms:  
       if (i.c0 != 0 and i.c1 != 0):
         c0list.append(i.c0)
         c1list.append(i.c1)
@@ -207,7 +207,7 @@ def construct_nodelist(inputs_list, outputs_list, gates_list):
       node_list.append(n)
       gates_list.append(n)
 
-  # now mark all the gates that are output as is_output
+  
   for n in node_list:
     if n.name in o_name_list:
       n.is_output = True
